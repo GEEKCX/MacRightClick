@@ -13,6 +13,7 @@
 ### Changed
 
 - **license**: 将项目许可证升级为 Apache License 2.0，补充 NOTICE 文件及专利、修改文件标注和来源保留要求。
+- **distribution**: 关于页面与中英文说明同步更新，安装包包含 LICENSE 和 NOTICE；历史 MIT 授权不追溯修改。
 
 ## v1.2.1 — 2026-07-15
 

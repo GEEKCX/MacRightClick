@@ -1,6 +1,6 @@
 cask "rightclickassistant" do
-  version "1.2.1"
-  sha256 "9230f3db5684f537a00c15141e6dac746092ea4fef59e2ab37538d64dba46e37"
+  version "1.2.2"
+  sha256 "5ebb7c17fe8f905296fe2f343536caf1f0fad2d69b9534a0ebf91528dc065354"
 
   url "https://github.com/guyue55/MacRightClick/releases/download/v#{version}/RightClickAssistant-v#{version}-macOS-Universal.dmg"
   name "RightClickAssistant"
