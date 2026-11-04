@@ -349,4 +349,6 @@ open "/Applications/RightClickAssistant.app"
 
 ## License
 
-[MIT](LICENSE)
+This project is released under the [MIT License](LICENSE). Personal use, internal use, modification, and commercial use are free; when copying, modifying, or distributing this project or substantial portions of it, retain the original copyright notice and MIT license text, and provide attribution.
+
+The license does not require you to publish your modifications, and it does not grant rights to the project's trademarks, icons, or other branding not explicitly included in the source code.
