@@ -10,7 +10,7 @@
   <a href="https://github.com/guyue55/MacRightClick/actions"><img src="https://github.com/guyue55/MacRightClick/workflows/MacRightClick%20CI/CD%20Build/badge.svg" alt="CI 状态" /></a>
   <img src="https://img.shields.io/badge/macOS-13.0%2B-blue" alt="macOS 13.0+" />
   <img src="https://img.shields.io/badge/Swift-6.0-orange" alt="Swift 6.0" />
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" />
+  <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache License 2.0" />
 </p>
 
 MacRightClick 是一款免费、开源的 macOS Finder 右键菜单助手。当前源码注册 **30 个动作**，默认把已启用且适用于当前选中项的动作直接显示在一级菜单中；也可切换为分类子菜单。
@@ -91,12 +91,12 @@ flowchart LR
 
 ### GitHub Release
 
-当前代码、GitHub Release 和 Homebrew Cask 版本均为 **v1.2.1 社区构建**：
+当前代码、GitHub Release 和 Homebrew Cask 版本均为 **v1.2.2 社区构建**：
 
 | 格式 | 当前可下载制品 |
 | --- | --- |
-| DMG | [RightClickAssistant-v1.2.1-macOS-Universal.dmg](https://github.com/guyue55/MacRightClick/releases/download/v1.2.1/RightClickAssistant-v1.2.1-macOS-Universal.dmg) |
-| ZIP | [RightClickAssistant-v1.2.1-macOS-Universal.zip](https://github.com/guyue55/MacRightClick/releases/download/v1.2.1/RightClickAssistant-v1.2.1-macOS-Universal.zip) |
+| DMG | [RightClickAssistant-v1.2.2-macOS-Universal.dmg](https://github.com/guyue55/MacRightClick/releases/download/v1.2.2/RightClickAssistant-v1.2.2-macOS-Universal.dmg) |
+| ZIP | [RightClickAssistant-v1.2.2-macOS-Universal.zip](https://github.com/guyue55/MacRightClick/releases/download/v1.2.2/RightClickAssistant-v1.2.2-macOS-Universal.zip) |
 
 全部版本见 [GitHub Releases](https://github.com/guyue55/MacRightClick/releases)。
 
@@ -125,7 +125,7 @@ brew tap guyue55/macrightclick https://github.com/guyue55/MacRightClick.git
 brew install --cask guyue55/macrightclick/rightclickassistant
 ```
 
-当前 Cask 固定到 v1.2.1 的不可变 URL，并校验真实 SHA-256。`brew upgrade` 只会在仓库中的 Cask 版本和哈希更新后升级，不会绕过版本元数据追随可变 Latest 文件。
+当前 Cask 固定到 v1.2.2 的不可变 URL，并校验真实 SHA-256。`brew upgrade` 只会在仓库中的 Cask 版本和哈希更新后升级，不会绕过版本元数据追随可变 Latest 文件。
 
 Homebrew 6.0 起，第三方 tap 必须经过显式信任。上面的完整限定名称只信任 `rightclickassistant` 这一项，不会扩大到整个 tap，也是新旧 Homebrew 均可使用的推荐安装方式。如果此前使用短名称安装并看到 `untrusted tap`，执行：
 
@@ -140,7 +140,7 @@ brew install --cask guyue55/macrightclick/rightclickassistant
 > Homebrew 会校验下载包的 SHA-256 并安装 App，但不会为 App 补做 Developer ID 签名或 Apple 公证。首次打开时仍可能需要在“隐私与安全性”中手动允许。不建议使用 `--no-quarantine` 绕过这一次用户确认。
 
 > [!IMPORTANT]
-> 当前 v1.2.1 是 Ad-hoc 签名、未经 Apple 公证的社区构建。新机器通过 Homebrew 安装后，macOS 仍可能阻止首次启动。先尝试 Control 点击 App ->“打开”，或“系统设置 -> 隐私与安全性 -> 仍要打开”。如果确认 App 来自本仓库但系统仍然拦截，执行：
+> 当前 v1.2.2 是 Ad-hoc 签名、未经 Apple 公证的社区构建。新机器通过 Homebrew 安装后，macOS 仍可能阻止首次启动。先尝试 Control 点击 App ->“打开”，或“系统设置 -> 隐私与安全性 -> 仍要打开”。如果确认 App 来自本仓库但系统仍然拦截，执行：
 
 ```bash
 sudo /usr/bin/xattr -dr com.apple.quarantine "/Applications/RightClickAssistant.app"
@@ -155,7 +155,7 @@ brew upgrade --cask guyue55/macrightclick/rightclickassistant
 ```
 
 > [!NOTE]
-> 从 v1.2.0 升级时，如果 `brew upgrade` 报出 `pluginkit -r guyue.RightClickAssistant.Extension`，这是旧版 Cask 已保存的卸载脚本错误，不是 v1.2.1 制品校验失败。仅需执行一次以下迁移；第一条命令只清除右键助手的旧 Homebrew 收据，第二条会用已校验的 v1.2.1 DMG 覆盖安装：
+> 从 v1.2.0 升级时，如果 `brew upgrade` 报出 `pluginkit -r guyue.RightClickAssistant.Extension`，这是旧版 Cask 已保存的卸载脚本错误，不是 v1.2.2 制品校验失败。仅需执行一次以下迁移；第一条命令只清除右键助手的旧 Homebrew 收据，第二条会用已校验的 v1.2.2 DMG 覆盖安装：
 >
 > ```bash
 > rm -rf "$(brew --caskroom)/rightclickassistant"
@@ -196,11 +196,11 @@ brew install --cask guyue55/macrightclick/rightclickassistant
 6. 需要访问受保护目录时，再授予完全磁盘访问。
 7. 在“动作”页选择档案、收藏和菜单布局。
 
-直接下载 v1.2.1 DMG 时，可与 Cask 中公开的 SHA-256 比对：
+直接下载 v1.2.2 DMG 时，可与 Cask 中公开的 SHA-256 比对：
 
 ```bash
-shasum -a 256 RightClickAssistant-v1.2.1-macOS-Universal.dmg
-# 期望: 9230f3db5684f537a00c15141e6dac746092ea4fef59e2ab37538d64dba46e37
+shasum -a 256 RightClickAssistant-v1.2.2-macOS-Universal.dmg
+# 与同一 Release 的 SHA256SUMS 中对应文件的哈希比对，不要使用其他版本的哈希。
 ```
 
 手动注册扩展：
@@ -349,6 +349,6 @@ open "/Applications/RightClickAssistant.app"
 
 ## License
 
-本项目采用 [MIT License](LICENSE)。个人使用、内部使用、修改和商业使用均免费；如果复制、修改或分发本项目或其重要组成部分，需要保留原版权声明和 MIT 许可证文本，并注明来源。
+自 v1.2.2 起，本项目采用 [Apache License 2.0](LICENSE)。个人、内部和商业使用均免费。再分发时须提供许可证、保留适用的版权和归属声明及 [NOTICE](NOTICE)，并对修改过的文件作显著标注；具体以许可证原文为准。无需在每个使用界面强制展示署名，也不要求公开修改后的源码。
 
-该协议不要求公开你的修改内容，也不授予项目商标、图标或其他未明确包含在源码中的品牌权利。
+协议不授予项目商标使用权（合理说明来源除外）。历史版本及其已有授权不追溯变更；Git 历史中的 MIT 许可证保留原样。

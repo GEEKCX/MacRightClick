@@ -70,7 +70,7 @@ struct OverviewSettingsView: View {
                         .foregroundStyle(.secondary)
                 }
                 LabeledContent("许可") {
-                    Text("MIT")
+                    Text("Apache 2.0")
                         .foregroundStyle(.secondary)
                 }
                 LabeledContent("隐私") {

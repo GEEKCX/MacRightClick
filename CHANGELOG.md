@@ -8,6 +8,12 @@
 
 ## Unreleased
 
+## v1.2.2 — 2026-11-04
+
+### Changed
+
+- **license**: 将项目许可证升级为 Apache License 2.0，补充 NOTICE 文件及专利、修改文件标注和来源保留要求。
+
 ## v1.2.1 — 2026-07-15
 
 ### Added

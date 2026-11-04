@@ -50,6 +50,8 @@ jobs:
 
       - name: Verify development artifacts
         run: |
+          cmp LICENSE build/RightClickAssistant.app/Contents/Resources/LICENSE
+          cmp NOTICE build/RightClickAssistant.app/Contents/Resources/NOTICE
           codesign --verify --deep --strict --verbose=2 build/RightClickAssistant.app
           quick_service_helper="build/RightClickAssistant.app/Contents/Resources/RightClickAssistantQuickService"
           test -x "$quick_service_helper"
@@ -100,6 +102,8 @@ jobs:
           VERIFY_BUILD_ARTIFACTS: "1"
         run: |
           ./Scripts/verify_release_metadata.sh
+          cmp LICENSE build/RightClickAssistant.app/Contents/Resources/LICENSE
+          cmp NOTICE build/RightClickAssistant.app/Contents/Resources/NOTICE
           codesign --verify --deep --strict --verbose=2 build/RightClickAssistant.app
           hdiutil verify build/RightClickAssistant.dmg
 

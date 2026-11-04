@@ -10,7 +10,7 @@ English | [简体中文](README.md)
   <a href="https://github.com/guyue55/MacRightClick/actions"><img src="https://github.com/guyue55/MacRightClick/workflows/MacRightClick%20CI/CD%20Build/badge.svg" alt="CI status" /></a>
   <img src="https://img.shields.io/badge/macOS-13.0%2B-blue" alt="macOS 13.0+" />
   <img src="https://img.shields.io/badge/Swift-6.0-orange" alt="Swift 6.0" />
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" />
+  <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache License 2.0" />
 </p>
 
 MacRightClick is a free, open-source Finder context-menu assistant for macOS. The current source registers **30 actions**. Enabled actions that apply to the current selection appear directly in the top-level menu by default; a categorized submenu layout remains available.
@@ -91,12 +91,12 @@ flowchart LR
 
 ### GitHub Release
 
-The code, GitHub Release, and Homebrew Cask are all at the **v1.2.1 community build**:
+The code, GitHub Release, and Homebrew Cask are all at the **v1.2.2 community build**:
 
 | Format | Current downloadable artifact |
 | --- | --- |
-| DMG | [RightClickAssistant-v1.2.1-macOS-Universal.dmg](https://github.com/guyue55/MacRightClick/releases/download/v1.2.1/RightClickAssistant-v1.2.1-macOS-Universal.dmg) |
-| ZIP | [RightClickAssistant-v1.2.1-macOS-Universal.zip](https://github.com/guyue55/MacRightClick/releases/download/v1.2.1/RightClickAssistant-v1.2.1-macOS-Universal.zip) |
+| DMG | [RightClickAssistant-v1.2.2-macOS-Universal.dmg](https://github.com/guyue55/MacRightClick/releases/download/v1.2.2/RightClickAssistant-v1.2.2-macOS-Universal.dmg) |
+| ZIP | [RightClickAssistant-v1.2.2-macOS-Universal.zip](https://github.com/guyue55/MacRightClick/releases/download/v1.2.2/RightClickAssistant-v1.2.2-macOS-Universal.zip) |
 
 See [GitHub Releases](https://github.com/guyue55/MacRightClick/releases) for all versions.
 
@@ -125,7 +125,7 @@ brew tap guyue55/macrightclick https://github.com/guyue55/MacRightClick.git
 brew install --cask guyue55/macrightclick/rightclickassistant
 ```
 
-The current Cask is pinned to an immutable v1.2.1 URL with a real SHA-256. `brew upgrade` advances only after this repository updates the Cask version and checksum; it does not bypass version metadata by following a mutable Latest file.
+The current Cask is pinned to an immutable v1.2.2 URL with a real SHA-256. `brew upgrade` advances only after this repository updates the Cask version and checksum; it does not bypass version metadata by following a mutable Latest file.
 
 Starting with Homebrew 6.0, third-party taps require explicit trust. The fully qualified name above trusts only the `rightclickassistant` Cask, not the entire tap, and is the recommended command across old and new Homebrew versions. If a previous short-name install reported an `untrusted tap`, run:
 
@@ -140,7 +140,7 @@ brew install --cask guyue55/macrightclick/rightclickassistant
 > Homebrew verifies the download SHA-256 and installs the app, but it cannot add a Developer ID signature or Apple notarization. The first launch may still require manual approval in Privacy & Security. Using `--no-quarantine` to bypass that user confirmation is not recommended.
 
 > [!IMPORTANT]
-> The current v1.2.1 community build is Ad-hoc signed and not notarized by Apple. After a Homebrew install on a new Mac, macOS may still block the first launch. First try Control-clicking the app and choosing Open, or use System Settings -> Privacy & Security -> Open Anyway. If the app is confirmed to come from this repository and macOS still blocks it, run:
+> The current v1.2.2 community build is Ad-hoc signed and not notarized by Apple. After a Homebrew install on a new Mac, macOS may still block the first launch. First try Control-clicking the app and choosing Open, or use System Settings -> Privacy & Security -> Open Anyway. If the app is confirmed to come from this repository and macOS still blocks it, run:
 
 ```bash
 sudo /usr/bin/xattr -dr com.apple.quarantine "/Applications/RightClickAssistant.app"
@@ -155,7 +155,7 @@ brew upgrade --cask guyue55/macrightclick/rightclickassistant
 ```
 
 > [!NOTE]
-> If an upgrade from v1.2.0 reports `pluginkit -r guyue.RightClickAssistant.Extension`, the failure comes from the uninstall script stored by the old Cask, not from v1.2.1 verification. Run this one-time migration: the first command removes only RightClickAssistant's stale Homebrew receipt, and the second overwrites the app with the verified v1.2.1 DMG.
+> If an upgrade from v1.2.0 reports `pluginkit -r guyue.RightClickAssistant.Extension`, the failure comes from the uninstall script stored by the old Cask, not from v1.2.2 verification. Run this one-time migration: the first command removes only RightClickAssistant's stale Homebrew receipt, and the second overwrites the app with the verified v1.2.2 DMG.
 >
 > ```bash
 > rm -rf "$(brew --caskroom)/rightclickassistant"
@@ -196,11 +196,11 @@ brew install --cask guyue55/macrightclick/rightclickassistant
 6. Grant Full Disk Access only when protected-location operations require it.
 7. Choose an action profile, favorites, and menu layout on the Actions page.
 
-For a direct v1.2.1 DMG download, compare its SHA-256 with the value published in the Cask:
+For a direct v1.2.2 DMG download, compare its SHA-256 with the value published in the Cask:
 
 ```bash
-shasum -a 256 RightClickAssistant-v1.2.1-macOS-Universal.dmg
-# Expected: 9230f3db5684f537a00c15141e6dac746092ea4fef59e2ab37538d64dba46e37
+shasum -a 256 RightClickAssistant-v1.2.2-macOS-Universal.dmg
+# Compare with this file in SHA256SUMS from the same Release, not another version.
 ```
 
 Manual extension registration:
@@ -349,6 +349,6 @@ open "/Applications/RightClickAssistant.app"
 
 ## License
 
-This project is released under the [MIT License](LICENSE). Personal use, internal use, modification, and commercial use are free; when copying, modifying, or distributing this project or substantial portions of it, retain the original copyright notice and MIT license text, and provide attribution.
+Starting with v1.2.2, this project uses the [Apache License 2.0](LICENSE). Personal, internal, and commercial use are free. Redistribution requires a copy of the license, retention of applicable copyright and attribution notices and [NOTICE](NOTICE), and prominent notices in modified files, as specified by the license. Attribution need not appear on every user interface, and modifications need not be published.
 
-The license does not require you to publish your modifications, and it does not grant rights to the project's trademarks, icons, or other branding not explicitly included in the source code.
+The license grants no trademark rights except customary identification of origin. Earlier releases and existing grants are not retroactively changed; historical MIT license files remain intact in Git history.

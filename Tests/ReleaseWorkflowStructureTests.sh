@@ -38,4 +38,8 @@ if grep -q 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' "$WORKFLOW_FILE"; then
   fail "GitHub Actions 应原生使用 Node 24，不应依赖强制兼容开关"
 fi
 
+grep -Fq 'cp LICENSE NOTICE "$APP_BUNDLE/Contents/Resources/"' "$ROOT_DIR/Scripts/build.sh" || fail "安装包必须包含 LICENSE 和 NOTICE"
+grep -q 'Version 2.0, January 2004' "$ROOT_DIR/LICENSE" || fail "必须包含 Apache 2.0 原文"
+grep -q 'Copyright 2026 guyue' "$ROOT_DIR/NOTICE" || fail "必须包含来源归属声明"
+grep -Fq 'Text("Apache 2.0")' "$ROOT_DIR/Sources/RightClickAssistant/Views/GeneralSettingsView.swift" || fail "关于页面必须展示当前许可证"
 echo "✅ 社区发布工作流结构校验通过"

@@ -214,6 +214,8 @@ else
     echo "⚠️ [Build] 未找到 Resources/AppIcon.png 资源，跳过图标打包。"
 fi
 
+cp LICENSE NOTICE "$APP_BUNDLE/Contents/Resources/"
+
 # 拷贝 Office 三件套最小骨架到 .app/Contents/Resources/Templates/
 if [ -d "Resources/Templates" ]; then
     mkdir -p "$APP_BUNDLE/Contents/Resources/Templates"
