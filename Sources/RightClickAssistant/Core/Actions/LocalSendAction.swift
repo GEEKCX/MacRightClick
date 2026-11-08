@@ -100,9 +100,9 @@ public final class LocalSendAction: MenuAction, @unchecked Sendable {
     }
 
     private func performSend(paths: [String]) -> ActionCompletionStatus {
-        if let cliPath = Self.resolveCLIPath() {
-            return runCLI(cliPath: cliPath, paths: paths)
-        }
+        // 注意：Homebrew 当前的 localsend-cli 1.18.2 是交互式 TUI，尚无 `send` 子命令
+        // （CLI 参数化直传在上游 README 已有但未随版本发布）。在 CLI 支持落地前，
+        // 统一走「以路径参数拉起 LocalSend.app」，文件会自动进入发送页。
         return openLocalSendApp(paths: paths)
     }
 
