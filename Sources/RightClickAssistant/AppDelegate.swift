@@ -205,10 +205,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuDele
         guard let button = statusItem?.button else { return }
         
         // 采用 SF Symbols 原生图标渲染，带 macOS 版本兼容降级。
-        // contextualmenu 需要 macOS 14+，旧版本回退到 line.3.horizontal。
+        // computermouse 需要 macOS 13+，旧版本回退到 line.3.horizontal。
         let symbolName: String
-        if #available(macOS 14.0, *) {
-            symbolName = "contextualmenu"
+        if #available(macOS 13.0, *) {
+            symbolName = "computermouse"
         } else {
             symbolName = "line.3.horizontal"
         }

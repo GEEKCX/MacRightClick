@@ -12,6 +12,7 @@ struct OverviewSettingsView: View {
     @State private var isLaunchEnabled = false
     @State private var isSilentLaunchEnabled = true
     @State private var showsSuccessHUD = true
+    @State private var localSendTarget = ""
     @State private var updateCheckState: UpdateCheckState = .idle
 
     private var launchEnabledBinding: Binding<Bool> {
@@ -62,6 +63,20 @@ struct OverviewSettingsView: View {
                     get: { showsSuccessHUD },
                     set: saveSuccessHUD
                 ))
+            }
+
+            Section("LocalSend 直传") {
+                TextField("默认接收设备（IP 或别名）", text: Binding(
+                    get: { localSendTarget },
+                    set: { newValue in
+                        localSendTarget = newValue
+                        UserDefaults.standard.set(newValue, forKey: LocalSendAction.targetDefaultsKey)
+                    }
+                ))
+                .textFieldStyle(.roundedBorder)
+                Text("右键「通过 LocalSend 传输」时优先用 localsend-cli 直发到该设备（IP 如 192.168.1.8，或设备别名）。留空则打开 LocalSend App 手动选择。需安装 CLI：brew install localsend-cli")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
 
             Section("关于") {
@@ -118,6 +133,7 @@ struct OverviewSettingsView: View {
             forKey: "enable_success_hud",
             defaultValue: true
         )
+        localSendTarget = UserDefaults.standard.string(forKey: LocalSendAction.targetDefaultsKey) ?? ""
     }
 
     @ViewBuilder

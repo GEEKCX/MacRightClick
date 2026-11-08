@@ -26,7 +26,8 @@ public enum DefaultActionRegistry {
             UtilityAction(type: .toggleHiddenFiles),
             UtilityAction(type: .textToQRCode),
             UtilityAction(type: .convertToPNG),
-            UtilityAction(type: .convertToJPEG)
+            UtilityAction(type: .convertToJPEG),
+            LocalSendAction()
         ]
 
         return newFileActions + fileManageActions + terminalActions + utilityActions

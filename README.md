@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache License 2.0" />
 </p>
 
-MacRightClick 是一款免费、开源的 macOS Finder 右键菜单助手。当前源码注册 **30 个动作**，默认把已启用且适用于当前选中项的动作直接显示在一级菜单中；也可切换为分类子菜单。
+MacRightClick 是一款免费、开源的 macOS Finder 右键菜单助手。当前源码注册 **31 个动作**，默认把已启用且适用于当前选中项的动作直接显示在一级菜单中；也可切换为分类子菜单。
 
 项目由 FinderSync 扩展负责菜单与上下文采集，宿主 App 负责文件操作、交互与后台任务。它不包含广告、遥测或后台更新轮询。
 
@@ -44,14 +44,14 @@ MacRightClick 是一款免费、开源的 macOS Finder 右键菜单助手。当�
 - **Homebrew 外部工具**：区分独立安装与 Homebrew 管理来源，再安装、更新或修复 iTerm2、Warp、VS Code、Sublime Text、Cursor。
 - **Universal 2**：同时支持 Apple Silicon 与 Intel Mac。
 
-## 30 个动作
+## 31 个动作
 
 | 类别 | 数量 | 动作 |
 | --- | ---: | --- |
 | 新建文件 | 9 | `.txt`、`.md`、`.json`、`.csv`、`.html`、`.docx`、`.xlsx`、`.pptx`、`.pdf` |
 | 文件管理 | 9 | 剪切、粘贴、彻底删除、拷贝完整路径、拷贝文件名、复制到、移动到、复制 Shell 安全路径、复制 Git 相对路径 |
 | 终端/编辑器 | 6 | Terminal、iTerm2、Warp、Visual Studio Code、Sublime Text、Cursor |
-| 实用工具 | 6 | MD5、SHA-256、切换隐藏文件、剪贴板文本转二维码、转 PNG、转 JPEG |
+| 实用工具 | 7 | MD5、SHA-256、切换隐藏文件、剪贴板文本转二维码、转 PNG、转 JPEG、LocalSend 直传 |
 
 > [!NOTE]
 > 低频专业动作默认关闭；彻底删除、复制到、移动到、切换隐藏文件属于高级动作，默认关闭并在执行前确认。依赖第三方 App 的动作只会在对应 App 已安装时出现在菜单中。
@@ -245,7 +245,7 @@ codesign --verify --deep --strict --verbose=2 build/RightClickAssistant.app
 hdiutil verify build/RightClickAssistant.dmg
 ```
 
-`ActionVerifier_bin` 验证 10 项关键链路，并不代表逐一验证全部 30 个动作。运行前请在“动作”页应用“专业”档案：
+`ActionVerifier_bin` 验证 10 项关键链路，并不代表逐一验证全部 31 个动作。运行前请在“动作”页应用“专业”档案：
 
 ```bash
 ./ActionVerifier_bin

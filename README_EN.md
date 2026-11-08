@@ -13,7 +13,7 @@ English | [简体中文](README.md)
   <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache License 2.0" />
 </p>
 
-MacRightClick is a free, open-source Finder context-menu assistant for macOS. The current source registers **30 actions**. Enabled actions that apply to the current selection appear directly in the top-level menu by default; a categorized submenu layout remains available.
+MacRightClick is a free, open-source Finder context-menu assistant for macOS. The current source registers **31 actions**. Enabled actions that apply to the current selection appear directly in the top-level menu by default; a categorized submenu layout remains available.
 
 A FinderSync extension renders menus and captures context, while the host app performs file operations, interaction, and background work. The app contains no ads, telemetry, or background update polling.
 
@@ -44,14 +44,14 @@ A FinderSync extension renders menus and captures context, while the host app pe
 - **Homebrew tool management** that distinguishes standalone apps from Homebrew-managed installs before installing, updating, or repairing iTerm2, Warp, VS Code, Sublime Text, and Cursor.
 - **Universal 2** support for Apple Silicon and Intel Macs.
 
-## 30 Actions
+## 31 Actions
 
 | Category | Count | Actions |
 | --- | ---: | --- |
 | New files | 9 | `.txt`, `.md`, `.json`, `.csv`, `.html`, `.docx`, `.xlsx`, `.pptx`, `.pdf` |
 | File management | 9 | Cut, Paste, Permanent Delete, Copy Full Path, Copy Name, Copy To, Move To, Copy Shell-Safe Path, Copy Git-Relative Path |
 | Terminals/editors | 6 | Terminal, iTerm2, Warp, Visual Studio Code, Sublime Text, Cursor |
-| Utilities | 6 | MD5, SHA-256, Toggle Hidden Files, Clipboard Text to QR Code, Convert to PNG, Convert to JPEG |
+| Utilities | 7 | MD5, SHA-256, Toggle Hidden Files, Clipboard Text to QR Code, Convert to PNG, Convert to JPEG, LocalSend Transfer |
 
 > [!NOTE]
 > Low-frequency professional actions are off by default. Permanent Delete, Copy To, Move To, and Toggle Hidden Files are advanced actions: they are off by default and require confirmation. Actions that depend on third-party apps are shown only when the corresponding app is installed.
@@ -245,7 +245,7 @@ codesign --verify --deep --strict --verbose=2 build/RightClickAssistant.app
 hdiutil verify build/RightClickAssistant.dmg
 ```
 
-`ActionVerifier_bin` covers 10 key workflows; it does not claim to execute all 30 actions. Apply the Professional profile on the Actions page first:
+`ActionVerifier_bin` covers 10 key workflows; it does not claim to execute all 31 actions. Apply the Professional profile on the Actions page first:
 
 ```bash
 ./ActionVerifier_bin
