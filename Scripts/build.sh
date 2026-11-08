@@ -266,6 +266,7 @@ HOST_SOURCES="
     Sources/RightClickAssistant/Core/Actions/BackgroundActionRunner.swift \
     Sources/RightClickAssistant/Core/Actions/TerminalOpenAction.swift \
     Sources/RightClickAssistant/Core/Actions/UtilityAction.swift \
+    Sources/RightClickAssistant/Core/Actions/LocalSendAction.swift \
     Sources/RightClickAssistant/Core/FileHashCalculator.swift \
     Sources/RightClickAssistant/Core/Logging/AppLog.swift \
     Sources/RightClickAssistant/Core/Distribution.swift \
@@ -296,6 +297,7 @@ EXT_SOURCES="
     Sources/RightClickAssistant/Core/Actions/BackgroundActionRunner.swift \
     Sources/RightClickAssistant/Core/Actions/TerminalOpenAction.swift \
     Sources/RightClickAssistant/Core/Actions/UtilityAction.swift \
+    Sources/RightClickAssistant/Core/Actions/LocalSendAction.swift \
     Sources/RightClickAssistant/Core/FileHashCalculator.swift \
     Sources/RightClickAssistant/Core/Logging/AppLog.swift \
     Sources/RightClickAssistant/Core/Distribution.swift \
